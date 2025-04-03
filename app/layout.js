@@ -1,9 +1,16 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins , Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import SessionWrapper from "./components/SessionWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  variable: '--font-poppins',
+  weight: ['400', '600', '700'], // Specify the required font weights
 });
 
 const geistMono = Geist_Mono({
@@ -20,9 +27,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${poppins.variable} ${geistSans.variable} ${geistMono.variable} font-poppins antialiased`}
       >
+        <SessionWrapper>
         {children}
+        </SessionWrapper>
       </body>
     </html>
   );
