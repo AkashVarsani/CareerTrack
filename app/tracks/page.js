@@ -12,27 +12,27 @@ import { careerGuidanceData } from "../components/trackData";
 import { higherSecondary } from "../components/trackData";
 import darkColors from "../components/Colors";
 
-const tracks = () => {
-  const [ten, setten] = useState(false);
-  const [twelve, settwelve] = useState(false);
+const Tracks = () => {
+  const [ten, setTen] = useState(false);
+  const [twelve, setTwelve] = useState(false);
 
-  const [tenMain, settenMain] = useState(null);
-  const [tenSub, settenSub] = useState(null);
+  const [tenMain, setTenMain] = useState(null);
+  const [tenSub, setTenSub] = useState(null);
 
-  const [twelveMain, settwelveMain] = useState(null);
-  const [twelveSub, settwelveSub] = useState(null);
+  const [twelveMain, setTwelveMain] = useState(null);
+  const [twelveSub, setTwelveSub] = useState(null);
 
   const ontenclick = () => {
     if (!ten) scrollToElementWithOffset("section11", 100);
-    setten(!ten);
-    settenMain(null);
-    settenSub(null);
+    setTen(!ten);
+    setTenMain(null);
+    setTenSub(null);
   };
   const ontwelveclick = () => {
     if (!twelve) scrollToElementWithOffset("section21", 100);
-    settwelve(!twelve);
-    settwelveMain(null);
-    settwelveSub(null);
+    setTwelve(!twelve);
+    setTwelveMain(null);
+    setTwelveSub(null);
   };
 
   function scrollToElementWithOffset(elementId, offset = 100, top = true) {
@@ -146,8 +146,8 @@ const tracks = () => {
                         transition={{ duration: 0.3 }}
                         className="bg-p1 p-4 rounded-2xl flex flex-col gap-3 cursor-pointer text-3xl text-p4 font-bold"
                         onClick={() => {
-                          settenMain(item);
-                          settenSub(null);
+                          setTenMain(item);
+                          setTenSub(null);
                           scrollToElementWithOffset("section12", 100);
                         }}
                       >
@@ -210,7 +210,7 @@ const tracks = () => {
                           className="text-white p-4 rounded-lg cursor-pointer shadow-md"
                           style={{ backgroundColor: darkColors[index%darkColors.length] }}
                           onClick={() => {
-                            settenSub({
+                            setTenSub({
                               ...sub,
                               color: darkColors[index%darkColors.length],
                             });
@@ -286,8 +286,8 @@ const tracks = () => {
                         transition={{ duration: 0.3 }}
                         className="bg-p1 p-4 rounded-2xl flex flex-col gap-3 cursor-pointer text-3xl text-p4 font-bold"
                         onClick={() => {
-                          settwelveMain(item);
-                          settwelveSub(null);
+                          setTwelveMain(item);
+                          setTwelveSub(null);
                           scrollToElementWithOffset("section22", 100);
                         }}
                       >
@@ -350,7 +350,7 @@ const tracks = () => {
                           className="text-white p-4 rounded-lg cursor-pointer shadow-md"
                           style={{ backgroundColor: darkColors[index%darkColors.length] }}
                           onClick={() => {
-                            settwelveSub({
+                            setTwelveSub({
                               ...sub,
                               color: darkColors[index%darkColors.length],
                             });
@@ -378,4 +378,4 @@ const tracks = () => {
   );
 };
 
-export default tracks;
+export default Tracks;

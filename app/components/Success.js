@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, wrap } from "framer-motion";
+import Image from "next/image";
 
 const SuccessStories = () => {
   const testimonials = [
@@ -137,7 +138,7 @@ const SuccessStories = () => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.1, ease: "easeOut" }}
               >
-                <img
+                <Image
                   src={testimonial.image}
                   alt={testimonial.name}
                   className="w-24 h-24 rounded-full border-4 border-white mb-4"
@@ -148,7 +149,7 @@ const SuccessStories = () => {
                 <p className="text-sm text-gray-400">
                   {testimonial.profession}
                 </p>
-                <p className="text-white text-sm mt-2">"{testimonial.message}"</p>
+                <p className="text-white text-sm mt-2">&quot;{testimonial.message}&quot;</p>
                 <p className="mt-2 text-yellow-400">
                   ⭐ {testimonial.rating.toFixed(1)}
                 </p>

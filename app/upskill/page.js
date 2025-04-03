@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import arrayNames from "../components/SkillsData";
 
 
-const upskill = () => {
+const Upskill = () => {
   const [selectedSkill, setSelectedSkill] = useState(null);
   const [activeSection, setActiveSection] = useState("beginner");
 
@@ -334,4 +334,4 @@ const upskill = () => {
   );
 };
 
-export default upskill;
+export default Upskill;
