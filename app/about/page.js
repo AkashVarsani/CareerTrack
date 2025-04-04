@@ -1,14 +1,17 @@
 "use client";
 
-import React from "react";
+import {React, useEffect} from "react";
 import Background from "../components/Background";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
 const About = () => {
-  const router = useRouter();
+
+ useEffect(() => {
+    document.title = "About - CareerTrack";
+  }, []);
+
   return (
     <div className="relative overflow-hidden text-white">
       <Background />
@@ -154,3 +157,5 @@ const About = () => {
 };
 
 export default About;
+
+

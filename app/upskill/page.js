@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import {useEffect,React} from "react";
 import Background from "../components/Background";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -12,6 +12,10 @@ import arrayNames from "../components/SkillsData";
 const Upskill = () => {
   const [selectedSkill, setSelectedSkill] = useState(null);
   const [activeSection, setActiveSection] = useState("beginner");
+  
+    useEffect(() => {
+      document.title = "Upskill - CareerTrack";
+    } , []);
 
   const capitalize = (key) => {
     return key.charAt(0).toUpperCase() + key.slice(1);
@@ -27,7 +31,7 @@ const Upskill = () => {
         <span id="yref"></span>
         <Navbar />
         <main className="flex flex-col items-center">
-          <div className="p-4 w-[80vw] flex flex-col items-center">
+          <div className="p-4 max-sm:w-[90vw] w-[80vw] flex flex-col items-center">
             <motion.h1
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -68,7 +72,7 @@ const Upskill = () => {
                               darkColors[(index + idx * 8) % darkColors.length],
                           }}
                           className="p-4 border rounded-lg shadow cursor-pointer hover:bg-gray-100"
-                          onClick={() => setSelectedSkill(skill)}
+                          onClick={() => {setSelectedSkill(skill);document.getElementById("yref").scrollIntoView({ behavior: "smooth" });}} 
                         >
                           {skill.skill}
                         </motion.div>
@@ -78,7 +82,7 @@ const Upskill = () => {
                 ))}
               </div>
             ) : (
-              <div className="space-y-4">
+              <div className="space-y-4 max-sm:w-[90vw]">
                 <button
                   onClick={() => setSelectedSkill(null)}
                   className="px-4 py-2 bg-red-500 text-white rounded"
@@ -108,7 +112,7 @@ const Upskill = () => {
                         level === activeSection ? (
                           <button
                             key={level}
-                            className="px-4 py-6 scale-105 bg-p2 font-semibold text-2xl  max-md:text-sm rounded border shadow p-4"
+                            className="px-4 py-6 max-sm:px-1 scale-105 bg-p2 font-semibold text-2xl  max-md:text-sm rounded border shadow p-4"
                             onClick={() =>
                               setActiveSection(
                                 level === activeSection ? null : level
@@ -122,7 +126,7 @@ const Upskill = () => {
                             whileHover={{ scale: 1.03 }}
                             transition={{ duration: 0.1 }}
                             key={level}
-                            className="px-4 py-6 bg-p4 hover:bg-p2 font-semibold text-2xl  max-md:text-lg rounded border shadow p-4"
+                            className="px-4 py-6 max-sm:px-1 bg-p4 hover:bg-p2 font-semibold text-2xl  max-md:text-sm rounded border shadow p-4"
                             onClick={() =>
                               setActiveSection(
                                 level === activeSection ? null : level
@@ -156,7 +160,7 @@ const Upskill = () => {
                       </div>
                       <div>
                         <h3 className="text-2xl  max-md:text-lg   font-semibold">Resources</h3>
-                        <div className="grid md:grid-cols-1 gap-4 mx-4">
+                        <div className="grid gap-4 mx-4">
                           {Object.entries(
                             selectedSkill.learningPath[activeSection]
                               ?.resources || {}
@@ -172,17 +176,30 @@ const Upskill = () => {
                                       resource.url
                                     ).searchParams.get("v"); // Extract Video ID
                                     return (
+                                      <div key={idx}>
                                       <iframe
-                                        key={idx}
+                                        key="11"
                                         width="560"
                                         height="315"
-                                        src={`https://www.youtube.com/embed/${videoId}`} // Use embed format
+                                        src={`https://www.youtube.com/embed/${videoId}`} 
                                         title="YouTube video player"
-                                        frameBorder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        className="max-sm:hidden text-sm"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                        ></iframe>
+                                         <iframe
+                                        key="12"
+                                        width="260"
+                                        height="315"
+                                        src={`https://www.youtube.com/embed/${videoId}`}
+                                        title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        className="sm:hidden"
                                         referrerPolicy="strict-origin-when-cross-origin"
                                         allowFullScreen
                                       ></iframe>
+                                        </div>
                                     );
                                   } else {
                                     return (

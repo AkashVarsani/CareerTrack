@@ -20,10 +20,12 @@ const QuizResult = ({ answers, questions, timeLeft, submitted, reset }) => {
 
   return (
     <div className="max-w-3xl mx-auto p-6 bg-p4-trans shadow-lg rounded-2xl text-center space-y-6 text-black text-start">
-      <h2 className="text-3xl font-bold text-p1  text-center">Quiz Results</h2>
+      <h2 className="text-3xl max-sm:text-xl font-bold text-p1  text-center">
+        Quiz Results
+      </h2>
 
       {/* Time Taken */}
-      <div className="flex justify-center items-center space-x-4 text-lg font-medium text-white">
+      <div className="flex justify-center items-center space-x-4 text-lg max-sm:text-sm font-medium text-white">
         <p>⏳ Time Taken:</p>
         <span className="bg-gray-100 text-black px-3 py-1 rounded-lg">
           {minutes} min {seconds} sec
@@ -31,25 +33,41 @@ const QuizResult = ({ answers, questions, timeLeft, submitted, reset }) => {
       </div>
 
       {/* Score Breakdown */}
-      <div className="grid grid-cols-2 gap-4 text-lg">
-        <p className="bg-green-200 px-4 py-2 rounded-lg">✅ Correct: {score}</p>
-        <p className="bg-red-200 px-4 py-2 rounded-lg">❌ Wrong: {wrong}</p>
-        <p className="bg-yellow-200 px-4 py-2 rounded-lg">
-          📌 Attempted: {attempted}
+      <div className="grid grid-cols-2 gap-4 text-lg  max-sm:text-sm">
+        <p className="bg-green-200 flex max-sm:flex-col px-4 py-2 rounded-lg">
+          <span>✅ </span>
+          <span>Correct: </span>
+          <span>{score}</span>
         </p>
-        <p className="bg-p1 px-4 py-2 rounded-lg">
-          ❔ Not Attempted: {notAttempted}
+        <p className="bg-red-200 flex max-sm:flex-col px-4 py-2 rounded-lg">
+          <span>❌ </span>
+          <span>Wrong: </span>
+          <span>{wrong}</span>
         </p>
-        <p className="bg-blue-100 px-4 py-2 rounded-lg">
-          🎯 Accuracy: {accuracy}%
+        <p className="bg-yellow-200 flex max-sm:flex-col px-4 py-2 rounded-lg">
+          <span>📌 </span>
+          <span>Attempted: </span>
+          <span>{attempted}</span>
         </p>
-        <p className="bg-purple-100 px-4 py-2 rounded-lg">
-          🏆 Success Rate: {successRate}%
+        <p className="bg-p1 flex max-sm:flex-col px-4 py-2 rounded-lg">
+          <span>❔ </span>
+          <span>Not Attempted: </span>
+          <span>{notAttempted}</span>
+        </p>
+        <p className="bg-blue-100 flex max-sm:flex-col px-4 py-2 rounded-lg">
+          <span>🎯 </span>
+          <span>Accuracy: </span>
+          <span>{accuracy}%</span>
+        </p>
+        <p className="bg-purple-100 flex max-sm:flex-col px-4 py-2 rounded-lg">
+          <span>🏆 </span>
+          <span>Success Rate: </span>
+          <span>{successRate}%</span>
         </p>
       </div>
 
       {/* Circular Progress Bar (Score) */}
-      <div className="flex items-center justify-center">
+      <div className="sm:flex items-center justify-center">
         <div className="relative h-32 mx-auto">
           <svg
             className="w-full h-full transform -rotate-90"
@@ -92,12 +110,33 @@ const QuizResult = ({ answers, questions, timeLeft, submitted, reset }) => {
                 },
               ],
             }}
+            options={{
+              plugins: {
+                legend: {
+                  labels: {
+                    color: "#fff", // Set legend label color (change to white if dark background)
+                    font: {
+                      size: 14, // Optional: change font size
+                      weight: "bold", // Optional: bold text
+                    },
+                  },
+                },
+                tooltip: {
+                  bodyColor: "#000", // Tooltip text color
+                  backgroundColor: "#fff", // Tooltip background
+                  titleColor: "#000", // Tooltip title color
+                },
+              },
+            }}
           />
         </div>
       </div>
-      <div onClick={()=>reset()} className="bg-purple-100 text-center px-4 py-2 rounded-lg">
-          Close Result
-        </div>
+      <div
+        onClick={() => reset()}
+        className="bg-purple-100 text-center px-4 py-2 rounded-lg"
+      >
+        Close Result
+      </div>
     </div>
   );
 };

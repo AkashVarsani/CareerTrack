@@ -20,6 +20,7 @@ const NetworkPage = () => {
   const [followingList, setFollowingList] = useState([]);
 
   useEffect(() => {
+    document.title = "Network - CareerTrack";
     if (!session) {
       router.push(
         `/login?callbackUrl=${encodeURIComponent(window.location.href)}`
@@ -65,7 +66,7 @@ const NetworkPage = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-xl sm:text-5xl text-center font-bold text-p0 mt-[50px] mb-3"
+              className="text-xl sm:text-5xl text-center font-bold text-p0 mt-[3vh] mb-3"
             >
               Network Smarter, Succeed Faster!
             </motion.h1>
@@ -87,9 +88,9 @@ const NetworkPage = () => {
               {users.map((user) => (
                 <div
                   key={user.username}
-                  className="p-4 border bg-p5-trans rounded-lg shadow-md flex items-center justify-between"
+                  className="p-4 max-sm:p-2 border bg-p5-trans rounded-lg shadow-md flex items-center justify-between"
                 >
-                  <div className="flex items-center space-x-4 max-sm:space-x-2">
+                  <div className="flex items-center space-x-4 max-sm:space-x-1">
                     <img
                     onClick={()=> router.push(`/${user.username}`)}
                       src={user.profile}
@@ -105,7 +106,7 @@ const NetworkPage = () => {
                     onClick={() =>
                       follow(user.username)
                     }
-                    className={`px-4 py-2 text-sm max-sm:text-xs  font-medium rounded-lg  text-black w-30 max-sm:w-20
+                    className={`px-4 py-2 max-sm:p-1 text-sm max-sm:text-xs  font-medium rounded-lg  text-black w-30 max-sm:w-18
                 ${
                   followingList.includes(user.username)
                     ? "bg-p2 "

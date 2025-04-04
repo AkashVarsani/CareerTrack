@@ -20,6 +20,10 @@ const QuizApp = () => {
   const [timeLeft, setTimeLeft] = useState(600); // 10 minutes timer
   const [submitted, setSubmitted] = useState(false);
 
+  useEffect(() => {
+    document.title = "Assessment - CareerTrack";
+  }, []);
+
   const reset = () => {
     setSelectedCategory(null);
     setQuestions([]);
@@ -50,6 +54,9 @@ const QuizApp = () => {
     setQuestions(category.array);
     setVisited(Array(10).fill(false));
     setAnswers(Array(10).fill(null));
+    document
+    .getElementById("viewport")
+    .scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleAnswer = (option) => {
@@ -79,6 +86,7 @@ const QuizApp = () => {
     if (visited[index]) return "visited";
     return "not-visited";
   };
+
 
   return (
     <div className="relative overflow-hidden text-white">
@@ -151,14 +159,14 @@ const QuizApp = () => {
                   <h2 className="font-bold text-2xl">
                     {selectedCategory.title} Quiz
                   </h2>
-                  <div className="flex items-center">
+                  <div className="flex items-center justify-end max-sm:w-25">
                     <FaClock className="mr-2" /> {Math.floor(timeLeft / 60)}:
                     {timeLeft % 60}
                   </div>
                 </div>
                 <div className="h-1 rounded-2xl bg-p1"></div>
                 {/* {handleVisited()} */}
-                <p className="text-lg mt-5 font-semibold min-h-20">
+                <p className="text-lg mt-5 font-semibold min-h-20 ">
                   {currentQuestion + 1}. {questions[currentQuestion]?.que}
                 </p>
                 <div className="mt-2 space-y-2 text-black">
@@ -204,7 +212,7 @@ const QuizApp = () => {
                   onClick={() => reset()}
                   className="bg-red-200 text-black mt-4 w-full text-center px-4 py-2 rounded-lg"
                 >
-                  Close Result
+                  Close Test
                 </button>
                 <div className="mt-4 grid grid-cols-5 gap-2">
                   {Array(10)

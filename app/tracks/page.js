@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import {useEffect,React} from "react";
 import Background from "../components/Background";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -21,6 +21,10 @@ const Tracks = () => {
 
   const [twelveMain, setTwelveMain] = useState(null);
   const [twelveSub, setTwelveSub] = useState(null);
+
+  useEffect(() => {
+    document.title = "Tracks - CareerTrack";
+  }, []);
 
   const ontenclick = () => {
     if (!ten) scrollToElementWithOffset("section11", 100);

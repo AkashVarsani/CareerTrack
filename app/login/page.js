@@ -17,6 +17,8 @@ const LoginPage = () => {
     if (session) {
       router.push(callbackUrl);
     }
+    document.title = "LogIn - CareerTrack";
+
   }, [session, router, callbackUrl]);
 
   return (

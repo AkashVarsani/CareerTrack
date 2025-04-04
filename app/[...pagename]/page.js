@@ -24,6 +24,7 @@ const Page = () => {
   const [cheked, setChecked] = useState(false);
 
   useEffect(() => {
+    document.title = params.pagename+" - CareerTrack";
     const checkUserExists = async () => {
       try {
         const list = await getAllUserName();
@@ -36,7 +37,6 @@ const Page = () => {
         console.error("Error fetching usernames:", error);
       }
     };
-
     checkUserExists();
   }, [params.pagename, router]);
 
@@ -90,7 +90,7 @@ const Page = () => {
   if (!user) return;
 
   return (
-    <div className="relative text-white">
+    <div className="relative overflow-hidden text-white">
       <Background />
       <div
         id="viewport"
@@ -115,7 +115,7 @@ const Page = () => {
                     className="rounded-full h-30 w-30 max-sm:h-15 max-sm:w-15  max-lg:h-20 max-lg:w-20 border-4 border-white shadow-lg"
                   />
                 </div>
-                <h2 className="text-4xl font-bold mt-2">{user.name}</h2>
+                <h2 className="text-4xl max-sm:text-xl font-bold mt-2">{user.name}</h2>
                 <p className="text-sm text-gray-500 mt-1">{user.bio}</p>
               </div>
 
@@ -136,7 +136,7 @@ const Page = () => {
               </div>
 
               {/* Navigation Tabs */}
-              <div className="flex border-b text-xl ">
+              <div className="flex border-b text-xl  max-sm:text-sm">
                 {["posts", "followers", "following"].map((tab) => (
                   <button
                     key={tab}
@@ -164,7 +164,7 @@ const Page = () => {
                         key={post._id}
                         className="bg-p4-trans text-white p-4 rounded-lg shadow"
                       >
-                        <h3 className="text-xl font-semibold ">
+                        <h3 className="text-xl  max-sm:text-lg font-semibold ">
                           {post.caption}
                         </h3>
                         <p className="text-sm mt-2 bg-p3 rounded-lg p-2">
@@ -185,13 +185,15 @@ const Page = () => {
                         key={index}
                         className="p-2 border rounded-lg shadow-sm flex items-center space-x-3 bg-p4-trans"
                       >
-                        <img
+                        <Image
+                        width={30}
+                        height={30}
                           src={follower.profile}
                           alt={follower.name}
                           onClick={() => toPage(follower.username)}
                           className="w-15 h-15 max-sm:w-10 max-sm:h-10 border-p1 p-0.5 max-sm:border-2 border-4 border rounded-full object-cover"
                         />
-                        <span className="text-lg font-medium">
+                        <span className="text-lg  max-sm:text-sm font-medium">
                           {follower.name}
                         </span>
                       </li>
@@ -205,13 +207,15 @@ const Page = () => {
                         key={index}
                         className="p-2 border rounded-lg shadow-sm flex items-center space-x-3 bg-p4-trans"
                       >
-                        <img
+                        <Image
+                        width={30}
+                        height={30}
                           src={followed.profile}
                           alt={followed.name}
                           onClick={() => toPage(followed.username)}
                           className="w-15 h-15 max-sm:w-10 max-sm:h-10 border-p1 p-0.5 max-sm:border-2 border-4 border rounded-full object-cover"
                         />
-                        <span className="text-lg font-medium">
+                        <span className="text-lg  max-sm:text-sm font-medium">
                           {followed.name}
                         </span>
                       </li>

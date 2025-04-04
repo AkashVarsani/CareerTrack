@@ -12,6 +12,7 @@ const Profile = () => {
   const { data: session, status } = useSession();
 
   useEffect(() => {
+    document.title = "Profile - CareerTrack";
     if (status === "loading") return;
 
     if (!session) {
