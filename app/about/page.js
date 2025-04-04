@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 const About = () => {
   const router = useRouter();
   return (
-    <div className="relative text-white">
+    <div className="relative overflow-hidden text-white">
       <Background />
       <div
         id="viewport"

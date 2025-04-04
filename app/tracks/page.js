@@ -60,7 +60,7 @@ const Tracks = () => {
   // },1000);
 
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <Background />
       <div
         id="viewport"

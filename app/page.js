@@ -8,7 +8,7 @@ import Background from "./components/Background";
 
 export default function Home() {
   return (
-    <div className="relative isolate h-screen w-screen overflow-y-scroll no-scrollbar overflow-x-hidden flex flex-col items-center">
+    <div className="relative isolate h-screen w-screen overflow-hidden flex flex-col items-center">
     <Background />
       <div className="relative overflow-y-scroll overflow-x-hidden font-poppins no-scrollbar h-screen w-screen text-white">
         <Navbar />

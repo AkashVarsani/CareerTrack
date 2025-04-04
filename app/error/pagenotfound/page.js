@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const PageNotFound = () => {
   return (
-    <div className="relative text-white">
+    <div className="relative  overflow-hidden text-white">
     <Background />
     <div
       id="viewport"
@@ -17,8 +17,8 @@ const PageNotFound = () => {
       <Navbar />
       <div className="flex flex-col justify-center items-center">
         <Image
-               width={30}
-               height={30} className="w-[90vw] max-w-[500px]" src="https://cdni.iconscout.com/illustration/premium/thumb/page-not-found-7621872-6167026.png" alt="" />
+               width={300}
+               height={300} className="w-[90vw] max-w-[500px]" src="https://cdni.iconscout.com/illustration/premium/thumb/page-not-found-7621872-6167026.png" alt="" />
       <Link href="/" className="py-3 w-[80vw] max-w-[500px] text-center text-xl max-sm:text-md bg-white text-black rounded-lg">Home</Link>
       </div>
       <Footer />

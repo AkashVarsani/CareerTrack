@@ -50,7 +50,7 @@ const NetworkPage = () => {
   };
 
   return (
-    <div className="relative text-white">
+    <div className="relative  overflow-hidden text-white">
       <Background />
       <div
         id="viewport"
