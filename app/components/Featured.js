@@ -63,39 +63,39 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <div className="why w-full px-[10%] py-10 text-p5">
-      <div className="w-full px-[5%] py-10  rounded-4xl">
-        <div className="text-4xl text-p1 font-extrabold text-center mb-8">
+    <div className="why w-full px-[3vw] py-10 text-p5">
+      <div className="w-full px-[3vww] py-10  rounded-4xl max-sm:rounded-2xl">
+        <div className="text-4xl max-sm:text-2xl  text-p1 font-extrabold text-center mb-8">
           Why Choose CareerTrack?
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="flex flex-col items-start gap-4 p-6 bg-p2 rounded-4xl shadow-lg hover:scale-105 transition-transform"
+              className="flex flex-col items-start gap-4 p-6 max-sm:p-4 bg-p2 rounded-4xl max-sm:rounded-2xl  shadow-lg hover:scale-105 transition-transform"
             >
-              <FaListUl className="text-3xl text-p5" />
-              <div className="text-2xl font-bold">{feature.title}</div>
-              <div className="text-xl">{feature.description}</div>
+              <FaListUl className="text-3xl max-sm:text-xl text-p5" />
+              <div className="text-2xl max-sm:text-lg font-bold">{feature.title}</div>
+              <div className="text-xl max-sm:text-sm">{feature.description}</div>
             </div>
           ))}
         </div>
       </div>
       
       {/* Featured Career Paths Section */}
-      <div className="w-full px-[5%] py-10 bg-p4 rounded-4xl mt-10">
-        <div className="text-4xl font-extrabold text-center mb-8 text-p1">
+      <div className="w-full px-[3vw] py-10 bg-p4-trans rounded-4xl max-sm:rounded-2xl mt-10">
+        <div className="text-4xl max-sm:text-2xl font-extrabold text-center mb-8 text-p1">
           Featured Career Paths
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {careers.map((career, index) => (
             <div
               key={index}
-              className="flex flex-col items-start gap-4 p-6 bg-p1 rounded-4xl shadow-lg hover:scale-105 transition-transform"
+              className="flex flex-col items-start gap-4 p-6 max-sm:p-4 bg-p1 rounded-4xl max-sm:rounded-2xl shadow-lg hover:scale-105 transition-transform"
             >
               {career.icon}
-              <div className="text-2xl font-bold">{career.title}</div>
-              <div className="text-xl">{career.description}</div>
+              <div className="text-2xl max-sm:text-lg font-bold">{career.title}</div>
+              <div className="text-xl max-sm:text-sm">{career.description}</div>
             </div>
           ))}
         </div>

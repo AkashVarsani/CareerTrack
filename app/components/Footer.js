@@ -10,20 +10,20 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-10 mt-20">
+    <footer className="bg-gray-900 text-gray-300 py-10 mt-10">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="flex flex-col gap-5 justify-center items-center h-full">
-          <span className="text-5xl font-bold">
+          <span className="text-5xl max-sm:text-3xl font-bold">
             <span className="text-white">Career</span>
             <span className="text-p2">Track</span>
           </span>
-          <div className="text-lg text-center">
+          <div className="text-lg max-sm:text-sm text-center">
             Your trusted platform for career guidance, skill-building, and
             professional networking.
           </div>
         </div>
         {/* Quick Links */}
-        <div className="flex justify-around">
+        <div className="flex max-sm:flex-col justify-around">
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">
               Quick Links
@@ -58,18 +58,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/profile" className="hover:text-white transition hover:underline underline-offset-8 decoration-sky-600 decoration-4">
-                  Profile
-                </Link>
-              </li>
-              <li>
                 <Link href="/about" className="hover:text-white transition hover:underline underline-offset-8 decoration-sky-600 decoration-4">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition hover:underline underline-offset-8 decoration-sky-600 decoration-4">
-                  Contact
+                <Link href="/profile" className="hover:text-white transition hover:underline underline-offset-8 decoration-sky-600 decoration-4">
+                  Profile
                 </Link>
               </li>
             </ul>

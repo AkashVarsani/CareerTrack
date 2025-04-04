@@ -71,11 +71,12 @@ const Tracks = () => {
         <main>
           <div className="flex flex-col items-center justify-center mx-[5%]">
             {/* Main Heading */}
+
             <motion.h1
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl md:text-5xl font-bold text-p0 mt-[100px] mb-1"
+              className="text-xl sm:text-5xl text-center font-bold text-p0 mt-[50px] mb-3"
             >
               Shape Your Future: Choose Your Career Path!
             </motion.h1>
@@ -84,23 +85,23 @@ const Tracks = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl md:text-5xl font-bold w-160 h-1 bg-p0 box-border text-p0 rounded-xl mb-1"
+              className="text-4xl md:text-5xl font-bold w-[50vw] h-1 bg-p0 box-border text-p0 rounded-xl mb-1"
             ></motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl md:text-5xl font-bold w-80 h-1 bg-p0 box-border text-p0 rounded-xl mb-[100px]"
+              className="text-4xl md:text-5xl font-bold w-[25vw] h-1 bg-p0 box-border text-p0 rounded-xl"
             ></motion.p>
             {/* ////////////////////////////// 10th Section Starts Here */}
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
-              className="flex gap-4 justify-around w-[80%] h-full mb-[3%] bg-p4-trans text-white p-8 rounded-2xl shadow-lg cursor-pointer hover:shadow-2xl"
+              className="flex gap-4 justify-around w-[80%] h-full mb-[3%] mt-[4vh] bg-p4-trans text-white p-8 rounded-2xl shadow-lg cursor-pointer hover:shadow-2xl"
             >
-              <div className="w-1/2 p-[5%]">
-                <h2 className="text-6xl font-semibold mb-2">After 10th</h2>
-                <p className="text-2xl">
+              <div className="xl:w-1/2 p-[5%]">
+                <h2 className="text-6xl max-sm:text-3xl font-semibold mb-2">After 10th</h2>
+                <p className="text-2xl max-sm:text-lg">
                   Discover streams, courses, and career paths for your bright
                   future!
                 </p>
@@ -110,20 +111,20 @@ const Tracks = () => {
                     className="mt-4 bg-white text-xl text-p4 px-6 py-3 rounded-lg font-medium hover:bg-blue-200"
                   >
                     {!ten && (
-                      <div className="flex justify-center items-center gap-3">
+                      <div className="flex max-sm:text-lg justify-center items-center gap-3">
                         <FaCompass className="text-3xl text-blue-500" /> Explore
                         Paths
                       </div>
                     )}
                     {ten && (
-                      <div className="flex justify-center items-center gap-3">
+                      <div className="flex max-sm:text-lg justify-center items-center gap-3">
                         <FaTimes className="text-2xl text-black" /> Close Paths
                       </div>
                     )}
                   </button>
                 </div>
               </div>
-              <div className="w-1/2 flex justify-center items-center">
+              <div className="max-xl:hidden xl:w-1/2 flex justify-center items-center">
                 <Image
                   src="https://wittysparks.com/wp-content/uploads/2020/10/tips-to-choose-the-right-college.jpg"
                   alt="After 10th"
@@ -138,13 +139,13 @@ const Tracks = () => {
             <div id="section11">
               {ten && (
                 <div>
-                  <div className="grid grid-cols-4 gap-6">
+                  <div className="grid xl:grid-cols-4 gap-6 max-sm:gap-2">
                     {careerGuidanceData.map((item, index) => (
                       <motion.div
                         key={index}
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.3 }}
-                        className="bg-p1 p-4 rounded-2xl flex flex-col gap-3 cursor-pointer text-3xl text-p4 font-bold"
+                        className="bg-p1 p-4 rounded-2xl flex flex-col gap-3 max-sm:gap-1 cursor-pointer text-3xl max-sm:text-lg  text-p4 font-bold"
                         onClick={() => {
                           setTenMain(item);
                           setTenSub(null);
@@ -168,10 +169,10 @@ const Tracks = () => {
                   style={{ backgroundColor: tenSub.color }}
                   className="bg-gray-200 text-white p-6 rounded-lg mt-6"
                 >
-                  <div className="text-3xl font-bold text-white flex items-center gap-4">
+                  <div className="text-3xl max-sm:text-lg font-bold text-white flex items-center gap-4">
                     {tenSub.logo} {tenSub.title}
                   </div>
-                  <div className="mt-4 text-lg">{tenSub.description}</div>
+                  <div className="mt-4 text-lg max-sm:text-xs">{tenSub.description}</div>
                 </div>
               )}
             </div>
@@ -181,11 +182,11 @@ const Tracks = () => {
             <div id="section12">
               {ten && tenMain && (
                 <div className="bg-p4-trans p-6 rounded-lg mt-2">
-                  <div className="text-3xl font-bold text-p1 flex items-center gap-4">
+                  <div className="text-3xl max-xl:text-xl font-bold text-p1 flex items-center gap-4">
                     {tenMain.logo} {tenMain.title}
                   </div>
-                  <div className="flex mt-4 gap-10">
-                    <div className="w-1/4 text-lg">
+                  <div className="flex max-xl:flex-col mt-4 gap-10">
+                    <div className="xl:w-1/4 text-lg max-sm:text-sm">
                       {tenMain.description.split(". ").map((point, index) =>
                         point.trim() ? (
                           <div
@@ -193,7 +194,7 @@ const Tracks = () => {
                             className="flex text-white items-start gap-2"
                           >
                             <span>
-                              <FaCircle size={10} className="mt-2" />
+                              <FaCircle size={10} className="mt-2 max-sm:w-2" />
                             </span>
                             <span>{point.trim()}.</span>
                           </div>
@@ -201,24 +202,27 @@ const Tracks = () => {
                       )}
                     </div>
 
-                    <div className="w-3/4 grid grid-cols-2 gap-4">
+                    <div className="xl:w-3/4 grid xl:grid-cols-2 gap-4">
                       {tenMain.subType.map((sub, index) => (
                         <motion.div
                           key={index}
                           whileHover={{ scale: 1.05 }}
                           transition={{ duration: 0.3 }}
                           className="text-white p-4 rounded-lg cursor-pointer shadow-md"
-                          style={{ backgroundColor: darkColors[index%darkColors.length] }}
+                          style={{
+                            backgroundColor:
+                              darkColors[index % darkColors.length],
+                          }}
                           onClick={() => {
                             setTenSub({
                               ...sub,
-                              color: darkColors[index%darkColors.length],
+                              color: darkColors[index % darkColors.length],
                             });
                             scrollToElementWithOffset("section13", 100);
                           }}
                         >
-                          <div className="text-xl flex items-center gap-3 font-semibold mt-2">
-                            <span className="w-10 text-3xl">{sub.logo}</span>
+                          <div className="text-xl max-sm:text-sm flex items-center gap-3 font-semibold mt-2">
+                            <span className="w-10 text-3xl max-sm:text-lg">{sub.logo}</span>
                             {sub.title}
                           </div>
                         </motion.div>
@@ -238,7 +242,7 @@ const Tracks = () => {
               transition={{ duration: 0.3 }}
               className="flex gap-4 justify-around w-[80%] h-full my-[3%] bg-p4-trans text-white p-8 rounded-2xl shadow-lg cursor-pointer hover:shadow-2xl"
             >
-              <div className="w-1/2 flex justify-center items-center">
+              <div className="max-xl:hidden w-1/2 flex justify-center items-center">
                 <Image
                   src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1724e7118581997.608bd2dada4de.jpg"
                   alt="After 10th"
@@ -247,16 +251,16 @@ const Tracks = () => {
                   className="rounded-2xl shadow-lg w-[90%] h-[90%]"
                 ></Image>
               </div>
-              <div className="w-1/2 p-[5%]">
-                <h2 className="text-6xl font-semibold mb-2">After 12th</h2>
-                <p className="text-2xl">
+              <div className="xl:w-1/2 p-[5%]">
+                <h2 className="text-6xl max-sm:text-3xl font-semibold mb-2">After 12th</h2>
+                <p className="text-2xl max-sm:text-lg ">
                   Choose the right degree, professional courses, and career
                   opportunities!
                 </p>
                 <div className="mt-4">
                   <button
                     onClick={() => ontwelveclick()}
-                    className="mt-4 bg-white text-xl text-p4 px-6 py-3 rounded-lg font-medium hover:bg-blue-200"
+                    className="mt-4 bg-white text-xl max-sm:text-lg text-p4 px-6 py-3 rounded-lg font-medium hover:bg-blue-200"
                   >
                     {!twelve && (
                       <div className="flex justify-center items-center gap-3">
@@ -278,13 +282,13 @@ const Tracks = () => {
             <div id="section21">
               {twelve && (
                 <div>
-                  <div className="grid grid-cols-4 gap-6">
+                  <div className="grid xl:grid-cols-4 gap-6 max-sm:gap-3">
                     {higherSecondary.map((item, index) => (
                       <motion.div
                         key={index}
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.3 }}
-                        className="bg-p1 p-4 rounded-2xl flex flex-col gap-3 cursor-pointer text-3xl text-p4 font-bold"
+                        className="bg-p1 p-4 max-sm:p-2 rounded-2xl max-sm:rounded-xl flex flex-col gap-3 max-sm:gap-1 cursor-pointer text-3xl max-sm:text-lg text-p4 font-bold"
                         onClick={() => {
                           setTwelveMain(item);
                           setTwelveSub(null);
@@ -308,10 +312,10 @@ const Tracks = () => {
                   style={{ backgroundColor: twelveSub?.color }}
                   className="bg-gray-200 text-white p-6 rounded-lg mt-6"
                 >
-                  <div className="text-3xl font-bold text-white flex items-center gap-4">
+                  <div className="text-3xl  max-sm:text-lg font-bold text-white flex items-center gap-4">
                     {twelveSub.logo} {twelveSub.title}
                   </div>
-                  <div className="mt-4 text-lg">{twelveSub.description}</div>
+                  <div className="mt-4 text-lg  max-sm:text-sm">{twelveSub.description}</div>
                 </div>
               )}
             </div>
@@ -321,11 +325,11 @@ const Tracks = () => {
             <div id="section22">
               {twelve && twelveMain && (
                 <div className="bg-p4-trans p-6 rounded-lg mt-2">
-                  <div className="text-3xl font-bold text-p1 flex items-center gap-4">
+                  <div className="text-3xl max-sm:text-lg font-bold text-p1 flex items-center gap-4">
                     {twelveMain.logo} {twelveMain.title}
                   </div>
-                  <div className="flex mt-4 gap-10">
-                    <div className="w-1/4 text-lg">
+                  <div className="flex max-sm:flex-col mt-4 gap-10">
+                    <div className="xl:w-1/4 text-lg  max-sm:text-sm">
                       {twelveMain.description.split(". ").map((point, index) =>
                         point.trim() ? (
                           <div
@@ -333,7 +337,7 @@ const Tracks = () => {
                             className="flex text-white items-start gap-2"
                           >
                             <span>
-                              <FaCircle size={10} className="mt-2" />
+                              <FaCircle size={10} className="mt-2  max-sm:w-2" />
                             </span>
                             <span>{point.trim()}.</span>
                           </div>
@@ -341,24 +345,27 @@ const Tracks = () => {
                       )}
                     </div>
 
-                    <div className="w-3/4 grid grid-cols-2 gap-4">
+                    <div className="xl:w-3/4 grid xl:grid-cols-2 gap-4 max-sm:gap-1">
                       {twelveMain.subType.map((sub, index) => (
                         <motion.div
                           key={index}
                           whileHover={{ scale: 1.05 }}
                           transition={{ duration: 0.3 }}
                           className="text-white p-4 rounded-lg cursor-pointer shadow-md"
-                          style={{ backgroundColor: darkColors[index%darkColors.length] }}
+                          style={{
+                            backgroundColor:
+                              darkColors[index % darkColors.length],
+                          }}
                           onClick={() => {
                             setTwelveSub({
                               ...sub,
-                              color: darkColors[index%darkColors.length],
+                              color: darkColors[index % darkColors.length],
                             });
                             scrollToElementWithOffset("section23", 100);
                           }}
                         >
-                          <div className="text-xl flex items-center gap-3 font-semibold mt-2">
-                            <span className="w-10 text-3xl">{sub.logo}</span>
+                          <div className="text-xl max-sm:text-sm flex items-center gap-3 max-sm:gap-1 font-semibold mt-2">
+                            <span className="w-10 text-3xl max-sm:text-lg">{sub.logo}</span>
                             {sub.title}
                           </div>
                         </motion.div>

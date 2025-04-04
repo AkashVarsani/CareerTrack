@@ -97,7 +97,7 @@ const QuizApp = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl md:text-5xl text-center font-bold text-p0 mt-[50px] mb-3"
+              className="text-xl sm:text-5xl text-center font-bold text-p0 mt-[50px] mb-3"
             >
               Choose a Quiz Category & Start Your Test!
             </motion.h1>
@@ -106,18 +106,18 @@ const QuizApp = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl md:text-5xl font-bold w-160 h-1 bg-p0 box-border text-p0 rounded-xl mb-1"
+              className="text-xl sm:text-5xl font-bold w-[50vw] h-1 bg-p0 box-border text-p0 rounded-xl mb-1"
             ></motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl md:text-5xl font-bold w-80 h-1 bg-p0 box-border text-p0 rounded-xl mb-[50px]"
+              className="text-xl sm:text-5xl font-bold w-[25vw] h-1 bg-p0 box-border text-p0 rounded-xl mb-[50px]"
             ></motion.p>
           </div>
           <div className="p-4 max-w-4xl mx-auto">
             {!selectedCategory ? (
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-4">
                 {quizCategories.map((category, idx) => (
                   <div
                     key={idx}

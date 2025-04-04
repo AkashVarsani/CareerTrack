@@ -8,7 +8,7 @@ const userSchema = new Schema({
   email: { type: String, unique: true },
   username: { type: String, unique: true },
   profile: String,
-  bio: { type: String, default: "SUPPORT | SHARE | EMPOWER" },
+  bio: String,
   createdAt: { type: Date, default: Date.now },
 });
 

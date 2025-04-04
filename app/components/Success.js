@@ -127,7 +127,7 @@ const SuccessStories = () => {
             <AnimatePresence custom={index} key={i} mode="popLayout">
               <motion.div
                 key={i}
-                className="absolute w-[250px] flex flex-col items-center bg-p4 text-center h-80 rounded-xl shadow-lg p-6 transition-all"
+                className="absolute w-[250px] max-sm:w-[200px] flex flex-col items-center justify-center bg-p4 text-center h-80  max-sm:h-75 rounded-xl shadow-lg p-6  max-sm:p-2 transition-all"
                 initial={{ opacity: 0 }}
                 animate={{
                   x: `${xOffset}px`,
@@ -139,18 +139,20 @@ const SuccessStories = () => {
                 transition={{ duration: 0.1, ease: "easeOut" }}
               >
                 <Image
+                width={100}
+                height={100}
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="w-24 h-24 rounded-full border-4 border-white mb-4"
+                  className="w-24 h-24 max-sm:w-20 max-sm:h-20 rounded-full border-4 border-white mb-4  max-sm:mb-2"
                 />
                 <h3 className="text-lg font-bold text-white">
                   {testimonial.name}
                 </h3>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm  text-gray-400">
                   {testimonial.profession}
                 </p>
                 <p className="text-white text-sm mt-2">&quot;{testimonial.message}&quot;</p>
-                <p className="mt-2 text-yellow-400">
+                <p className="mt-2 text-yellow-400  max-sm:text-sm">
                   ⭐ {testimonial.rating.toFixed(1)}
                 </p>
               </motion.div>
